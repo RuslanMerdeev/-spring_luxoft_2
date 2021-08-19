@@ -1,0 +1,7 @@
+1. Done.
+2. Bean "dataSource" is Data Source bean defined with sql query. This bean is injected to bean "countryDao".
+3. Done.
+4. Done.
+5. Done.
+6. Done.
+7.
