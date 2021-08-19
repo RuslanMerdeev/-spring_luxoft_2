@@ -4,4 +4,8 @@
 4. Done.
 5. Done.
 6. Done.
-7.
+7. Done.
+8. No, because of CountryRowMapper. It doesn't map "code_name" column to "codeName" field.
+9. Need to map "code_name" column to "codeName" field.
+10. Done.
+11. Done.
