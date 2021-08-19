@@ -1,0 +1,18 @@
+1. Done.
+2. Bean "dataSource" is Data Source bean defined with sql query. This bean is injected to bean "countryDao".
+3. Done.
+4. Done.
+5. Done.
+6. Done.
+7. Done.
+8. No, because of CountryRowMapper. It doesn't map "code_name" column to "codeName" field.
+9. Need to map "code_name" column to "codeName" field.
+10. Done.
+11. Done.
+12. It can insert named parameters (instead of ?) into the sql query.
+13. No, without @DirtiesContext annotation.
+14. Now testCountryListStartsWithA runs correctly. Because without @DirtiesContext annotation context is created once before all tests. It means that DB is created once. setUp() method fills DB before each test. Therefore, DB becomes overfilled before second test. @DirtiesContext creates context before second test and DB as well. No overfilling.
+15. Done.
+16. Done.
+17. Done.
+18. Need to add to bean "dataSource" another one script, that contains insert queries for data from COUNTRY_INIT_DATA. Advantage is that the context is created with fully initialized DB.
