@@ -1,16 +1,14 @@
 package com.luxoft.springdb.lab2.dao.jpa;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-
 import com.luxoft.springdb.lab2.dao.CountryDao;
 import com.luxoft.springdb.lab2.model.Country;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public class CountryJpaDaoImpl implements CountryDao {
@@ -41,9 +39,17 @@ public class CountryJpaDaoImpl implements CountryDao {
 	}
 
 	@Override
+	@Transactional
 	public Country getCountryByName(String name) {
-		// TODO: Implement it
-		return null;
+		Country country = null;
+		EntityManager em = emf.createEntityManager();
+		if (em != null) {
+			country = em.createQuery("select e from Country e where e.name like :name", Country.class)
+					.setParameter("name", name)
+					.getSingleResult();
+			em.close();
+		}
+		return country;
 	}
 
 }
