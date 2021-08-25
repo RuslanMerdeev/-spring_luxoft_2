@@ -1,0 +1,11 @@
+1. Done.
+2. <context:component-scan> allows searching annotated beans in Java classes. <context:annotation-config/> allows using annotation within beans in Java classes.
+3. Done.
+4. Done.
+5. Done.
+6. Done.
+7. Done.
+8. REQUIRED: within - joined to existing transaction, out of - creates new transaction. MANDATORY: within - joined to existing transaction, out of - throws exception.
+9. Done.
+10. Done.
+11. Done.
